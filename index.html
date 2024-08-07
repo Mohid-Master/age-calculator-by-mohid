@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="assets/css/basic-style.css" />
+  <link rel="stylesheet" href="assets/scss/style.css" />
+  <link rel="stylesheet" href="assets/js-calendar-main/app.css" />
+  <!-- <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"> -->
+  <title>Age calculator</title>
+</head>
+
+<body>
+  <div class="age_calculator_container">
+    <h1 class="heading">Age calculator</h1>
+    <div class="inputs_container">
+      <div class="date_of_birth_inputs_container input_container">
+        <span class="inp_title">Enter date of birth:</span>
+        <div class="date_of_birth_inputs">
+          <input type="number" class="birth_age_day" min="1" max="31" />
+          <input type="number" class="birth_age_month" min="0" max="12" />
+          <input type="number" class="birth_age_year" />
+          <div class="calendar_holder">
+            <img class="icon" aria-hidden="true" src="./assets/logo/calendar.svg" onclick="toggle_calendar(0)"></img>
+            <div class="calendar">
+              <div class="calendar-header">
+                <span class="month-picker" id="month-picker"></span>
+                <div class="year-picker">
+                  <span class="year-change" id="prev-year">
+                    <pre><</pre>
+                  </span>
+                  <span id="year">2022</span>
+                  <span class="year-change" id="next-year">
+                    <pre>></pre>
+                  </span>
+                </div>
+              </div>
+              <div class="calendar-body">
+                <div class="calendar-week-day">
+                  <div>Sun</div>
+                  <div>Mon</div>
+                  <div>Tue</div>
+                  <div>Wed</div>
+                  <div>Thu</div>
+                  <div>Fri</div>
+                  <div>Sat</div>
+                </div>
+                <div class="calendar-days"></div>
+              </div>
+              <div class="month-list"></div>
+              <div class="footer" onclick="toggle_calendar(0); fill_inputs()">done</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="age_in_date_inputs_container input_container">
+        <span class="inp_title">Age at the Date of:</span>
+        <div class="age_in_date_inputs">
+          <input type="number" class="the_date_of_age_day" min="1" max="31" />
+          <input type="number" class="the_date_of_age_month" min="0" max="12" />
+          <input type="number" class="the_date_of_age_year" />
+          <div class="calendar_holder">
+            <img class="icon" aria-hidden="true" src="./assets/logo/calendar.svg" onclick="toggle_calendar(1)"></img>
+            <div class="calendar">
+              <div class="calendar-header">
+                <span class="month-picker" id="month-picker"></span>
+                <div class="year-picker">
+                  <span class="year-change" id="prev-year">
+                    <pre><</pre>
+                  </span>
+                  <span id="year">2022</span>
+                  <span class="year-change" id="next-year">
+                    <pre>></pre>
+                  </span>
+                </div>
+              </div>
+              <div class="calendar-body">
+                <div class="calendar-week-day">
+                  <div>Sun</div>
+                  <div>Mon</div>
+                  <div>Tue</div>
+                  <div>Wed</div>
+                  <div>Thu</div>
+                  <div>Fri</div>
+                  <div>Sat</div>
+                </div>
+                <div class="calendar-days"></div>
+              </div>
+              <div class="month-list"></div>
+              <div class="footer" onclick="toggle_calendar(1); fill_inputs()">done</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="calculate_btn">Calculate Age</div>
+    </div>
+    <div class="result">
+      <h1>Age:</h1>
+      <div class="detail">
+        <p>
+          5 year 2month 6day
+          <br>by-Months 60month 6day
+          <br>by-Months 60month 6day
+          <br>by-Months 60month 6day
+          <br>by-Months 60month 6day
+        </p>
+        <div class="calendar_result_container">
+          <div class="calendar_result">
+            <div class="calendar-header">
+              <span class="month-picker">November</span>
+              <div class="year-picker">
+                <span id="year">2022</span>
+              </div>
+            </div>
+            <div class="calendar-body">
+              <div class="calendar-week-day">
+                <div>Sun</div>
+                <div>Mon</div>
+                <div>Tue</div>
+                <div>Wed</div>
+                <div>Thu</div>
+                <div>Fri</div>
+                <div>Sat</div>
+              </div>
+              <div class="calendar-days">
+                <div></div><div></div><div class="calendar-day-hover">1</div><div class="calendar-day-hover">2</div><div class="calendar-day-hover">3</div><div class="calendar-day-hover">4</div><div class="calendar-day-hover">5</div><div class="calendar-day-hover">6</div><div class="calendar-day-hover">7</div><div class="calendar-day-hover">8</div><div class="calendar-day-hover">9</div><div class="calendar-day-hover">10</div><div class="calendar-day-hover">11</div><div class="calendar-day-hover">12</div><div class="calendar-day-hover">13</div><div class="calendar-day-hover">14</div><div class="calendar-day-hover">15</div><div class="calendar-day-hover">16</div><div class="calendar-day-hover">17</div><div class="calendar-day-hover">18</div><div class="calendar-day-hover">19</div><div class="calendar-day-hover curr-date">20</div><div class="calendar-day-hover">21</div><div class="calendar-day-hover">22</div><div class="calendar-day-hover">23</div><div class="calendar-day-hover">24</div><div class="calendar-day-hover">25</div><div class="calendar-day-hover">26</div><div class="calendar-day-hover">27</div><div class="calendar-day-hover">28</div><div class="calendar-day-hover">29</div><div class="calendar-day-hover">30</div></div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="assets/js-calendar-main/app.js"></script>
+
+</html>
