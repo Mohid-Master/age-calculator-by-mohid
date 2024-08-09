@@ -1,0 +1,159 @@
+:root {
+  --dark-grey: #363636;
+  --white: #ffffff;
+  --blue: rgb(39, 166, 216);
+  --blue-dark: rgb(33, 103, 207);
+  --base-blue: #249ac1;
+  --base-blue-light: #5bd6ff;
+  --base-blue-light-60: #4aa7d6;
+  --base-blue-dark: #116683;
+  --base-purple-light: #c636d6;
+  --base-purple: #840092;
+  --base-purple-dark: #57145e;
+  --base-gray: #e5e5e5;
+  --base-gray-dark: #707070;
+  --white: #ffffff;
+  --black: #000000;
+  --white-smooth: #efefef;
+  --gray-smooth: #eeeeee;
+  --base-green: #21db0d;
+  --base-green-dark: #11680b;
+}
+@mixin flex_center_center_column {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.age_calculator_container {
+  padding: 3rem;
+  gap: 2rem;
+  @include flex_center_center_column();
+
+  .heading {
+    // background: var(--dark-grey);
+    // color: var(--white);
+    @include flex_center_center_column();
+    font: 5em comic;
+    width: 100%;
+  }
+  .inputs_container {
+    @include flex_center_center_column();
+    gap: 2rem;
+    width: 100%;
+    .inp_title {
+      font: 2.5em comic;
+      width: max-content;
+    }
+    .date_of_birth_inputs_container,
+    .age_in_date_inputs_container {
+      width: max-content;
+      gap: 3rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-around;
+    }
+    .date_of_birth_inputs,
+    .age_in_date_inputs {
+      // margin: auto;
+      gap: 0rem;
+      width: 70rem;
+      display: grid;
+      grid-template-columns: repeat(3, 15rem) 4rem;
+      input[type="number"] {
+        padding: 0.2rem 0.8rem;
+        height: 4rem;
+        width: 100%;
+        font: 2em comic;
+        // border-color: transparent transparent  black transparent;
+        border-color: var(--base-blue);
+        // border-radius: 0.5rem;
+        outline: none;
+      }
+    }
+    .calendar_holder {
+      position: relative;
+      height: 4rem;
+      width: 4rem;
+      .icon {
+        width: 100%;
+        height: 100%;
+        // border: 0.1rem solid var(--base-blue);
+        border-radius: 1rem;
+        text-align: center;
+      }
+      .calendar {
+        // width: 0%;
+        // height: 0%;
+      }
+      .calendar.active {
+        height: max-content;
+        width: max-content;
+      }
+    }
+    // .date_of_birth_inputs_container {
+    //   .date_of_birth_inputs {
+    //   }
+    //   .birth_age_day {
+    //   }
+    //   .birth_age_month {
+    //   }
+    //   .birth_age_year {
+    //   }
+    // }
+    // .age_in_date_inputs_container {
+    //   .age_in_date_inputs {
+    //   }
+    //   .the_date_of_age_day {
+    //   }
+    //   .the_date_of_age_month {
+    //   }
+    //   .the_date_of_age_year {
+    //   }
+    // }
+  }
+  .calculate_btn {
+    font: 2em comic;
+    background: var(--blue);
+    border-radius: 1rem;
+    padding: 1rem 2rem;
+    transition: all 0.5s;
+    &:hover {
+      background: var(--blue-dark);
+    }
+  }
+  .result {
+    @include flex_center_center_column();
+    h1 {
+      font: 5em sam;
+      width: 100%;
+    }
+    width: 100%;
+    .detail {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      p {
+        font: 3rem sans-serif;
+        width: max-content;
+      }
+      .calendar_result_container {
+        display: flex;
+      }
+    }
+  }
+}
+
+// @media (max-width: 600px) {
+//   .inputs_container {
+//     // flex-direction: column;
+//   }
+// }
+@media (max-width: 800px) {
+  .input_container {
+    // grid-template-columns: 1fr;
+    justify-items: center;
+  }
+}
